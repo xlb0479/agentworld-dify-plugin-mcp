@@ -592,7 +592,8 @@ class McpClients:
                         tool_name=tool_name,
                         # 不一定会得到什么，目前就一个server，先这样用着
                         server_name=next(iter(self._tool_actions.values())).server_name,
-                        action_type=ActionType.TOOL
+                        action_type=ActionType.TOOL,
+                        action_feature=next(iter(self._tool_actions.values())).action_feature
                     )
             # raise Exception(f"There is not a tool named {tool_name!r}")
         else:
