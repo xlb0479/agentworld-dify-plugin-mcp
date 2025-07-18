@@ -588,8 +588,15 @@ class McpClients:
         if not self._tool_actions:
             self.fetch_tools()
         if tool_name not in self._tool_actions:
-            raise Exception(f"There is not a tool named {tool_name!r}")
-        tool_action = self._tool_actions[tool_name]
+            tool_action = ToolAction(
+                        tool_name=tool_name,
+                        # 不一定会得到什么，目前就一个server，先这样用着
+                        server_name=next(iter(self._tool_actions.values())).server_name,
+                        action_type=ActionType.TOOL
+                    )
+            # raise Exception(f"There is not a tool named {tool_name!r}")
+        else:
+            tool_action = self._tool_actions[tool_name]
         server_name = tool_action.server_name
         logger.info(f"Executing tool! server name: {server_name}, tool name: {tool_name}, tool arguments: {tool_args}")
         if server_name not in self._clients:
