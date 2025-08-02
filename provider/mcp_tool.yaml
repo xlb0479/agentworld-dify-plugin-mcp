@@ -1,6 +1,6 @@
 identity:
-  author: junjiem
-  name: mcp_sse
+  author: codercooler
+  name: agentworld_mcp_tools
   label:
     en_US: MCP tools
     zh_Hans: 发现和调用 MCP 工具
@@ -11,8 +11,8 @@ identity:
   tags:
     - utilities
 tools:
-  - tools/mcp_list_tools.yaml
-  - tools/mcp_call_tool.yaml
+  - tools/search_tools.yaml
+  - tools/call_tool.yaml
 extra:
   python:
     source: provider/mcp_tool.py

@@ -1,0 +1,26 @@
+identity:
+  name: search_tools
+  author: codercooler
+  label:
+    en_US: Search MCP Tools
+    zh_Hans: 搜索 MCP 工具列表
+description:
+  human:
+    en_US: Search MCP Servers tools list.
+    zh_Hans: 搜索 MCP 服务端的工具列表。
+  llm: Search MCP tools list (Gets a list of MCP tools in addition to existing tools).
+extra:
+  python:
+    source: tools/search_tools.py
+parameters:
+  - name: tool_purposes
+    type: string
+    required: true
+    label:
+      en_US: Tool Purposes
+      zh_Hans: 工具用途
+    human_description:
+      en_US: JSON array of tool purposes to search for, e.g. ["web scraping", "monitoring", "file operations"]
+      zh_Hans: 要搜索的工具用途的JSON数组，例如 ["爬虫", "监控", "文件操作"]
+    llm_description: JSON array string containing tool purposes/categories to filter tools by
+    form: llm
